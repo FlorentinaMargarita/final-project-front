@@ -1,0 +1,34 @@
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            <h3 class="welcome">Welcome to</h3>
+            Brad Pitt Admirers! 
+            <h5 class="hint">The movie data base exclusivly about Brad Pitt</h5>
+        </section>
+
+        <div class="login-group">
+            <clr-input-container>
+                <label class="clr-sr-only">First Name</label>
+                <input type="text" name="firstName" [(ngModel)]="form.firstName" clrInput placeholder="First Name"/>
+            </clr-input-container>
+
+            <clr-input-container>
+                    <label class="clr-sr-only">Family Name</label>
+                    <input type="text" name="familyName" [(ngModel)]="form.familyName" clrInput placeholder="Family Name"/>
+            </clr-input-container>
+
+            <clr-input-container>
+                    <label class="clr-sr-only">Email</label>
+                    <input type="email" name="email" [(ngModel)]="form.email" clrInput placeholder="Email"/>
+            </clr-input-container>
+            
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input type="password" name="password" clrPassword placeholder="Password" />
+            </clr-password-container>
+            
+      
+            <button (click)="signUp()" type="submit" class="btn btn-primary"> <a routerLink ="facvourite"> Submit </a> </button>
+        </div>
+    </form>
+</div>

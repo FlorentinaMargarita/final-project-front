@@ -1,0 +1,38 @@
+.reso {
+display: flex;
+flex-wrap: wrap;
+align-content: space-between;
+}
+
+.frameLeftSide {
+   display: flex;
+   margin-left: 20px;
+   background-color: #00BFA9;
+}
+
+.frameLeftSide2 {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #00BFA9;
+}
+
+    .leftSide{
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-size: medium;
+ display: flex;
+ background-color: #00BFA9;
+ color: #006668;
+ width: auto;
+}
+
+.middle {
+    display: flex;
+    background-color: #A7F4E9;
+    width: 100px;
+}
+
+.rightSide {
+display: flex;
+
+}
