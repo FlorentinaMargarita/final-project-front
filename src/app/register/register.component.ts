@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UsernameService } from "../username.service";
 import { UserService } from '../user.service';
 
 @Component({
@@ -9,15 +8,17 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private _usernameService: UserService) { }
+  firstName;
+
+  constructor(private _userService: UserService) { }
   logIn(){ 
     console.log (this.form)
-    this._usernameService.registerUser(this.form).subscribe( (res: any)=> { 
+    this._userService.registerUser(this.form).subscribe( (res: any)=> { 
       console.log(res)
       sessionStorage.setItem('token', res.token); //token is stored in sessionStorage
       sessionStorage.setItem('userId', res.userId);
-      this._usernameService.firstName = res.firstName;
-      this._usernameService.isLoggedIn = true;
+      this._userService.firstName = res.firstName;
+      this._userService.isLoggedIn = true;
       this.goToDash();
     })
   }

@@ -13,7 +13,6 @@ import { ResoComponent } from './reso/reso.component'
 import { ApiService } from './api.service';
 import { FacvouriteComponent } from './facvourite/facvourite.component';
 import { UserService } from './user.service';
-import { UsernameService } from './username.service';
 import { RegisterComponent } from './register/register.component';
 
 
@@ -35,7 +34,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule
     
   ],
-  providers: [ApiService, UserService, UsernameService],
+  providers: [ApiService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

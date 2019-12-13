@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsernameService } from "../username.service";
+import { UserService } from '../user.service';
 
 
 
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router : Router,
-    private _usernameService : UsernameService
+    private _userService : UserService
     ) {}
 
 //   next(signUp){
@@ -29,12 +29,12 @@ export class LoginComponent implements OnInit {
 
 logIn(){ 
   console.log (this.form)
-  this._usernameService.registerUser(this.form).subscribe( (res: any)=> { 
+  this._userService.registerUser(this.form).subscribe( (res: any)=> { 
     console.log(res)
     sessionStorage.setItem('token', res.token); //token is stored in sessionStorage
     sessionStorage.setItem('userId', res.userId);
-    this._usernameService.firstName = res.firstName;
-    this._usernameService.isLoggedIn = true;
+    this._userService.firstName = res.firstName;
+    this._userService.isLoggedIn = true;
     this.goToDash();
   })
 }
