@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsernameService } from "../username.service";
 
 @Component({
   selector: 'app-register',
@@ -24,8 +25,6 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['/reso'])
   }
       
-  
-
   ngOnInit() {
   }
 
