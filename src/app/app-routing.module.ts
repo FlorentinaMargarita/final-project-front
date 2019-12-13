@@ -4,10 +4,12 @@ import { ResoComponent } from './reso/reso.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { FacvouriteComponent } from './facvourite/facvourite.component';
+import { RegisterComponent } from './register/register.component';
 
  const routes: Routes = [
   { path: 'reso', component: ResoComponent},
-  { path: '', component: LoginComponent, pathMatch: 'full'},
+  { path: '', redirectTo: 'register', pathMatch: 'full'},
+  { path: 'register', component: RegisterComponent},
   { path: 'logIn', component: LoginComponent},
   { path: 'facvourite', component: FacvouriteComponent}
 ];
