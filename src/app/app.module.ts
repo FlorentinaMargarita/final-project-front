@@ -14,6 +14,7 @@ import { ApiService } from './api.service';
 import { FacvouriteComponent } from './facvourite/facvourite.component';
 import { UserService } from './user.service';
 import { UsernameService } from './username.service';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { UsernameService } from './username.service';
     LoginComponent,
     HeaderComponent,
     ResoComponent,
-    FacvouriteComponent
+    FacvouriteComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
