@@ -8,12 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
-  form = {
-      firstName: "",
-      secondName: "",
-      password: "",
-      email: ""
+form = {
+  firstName: "",
+  secondName: "",
+  password: "",
+  email: ""
 }
   
   constructor(private _userService: UserService,
