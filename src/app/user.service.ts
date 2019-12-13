@@ -37,8 +37,9 @@ export class UserService {
   loginUrl: string = "appUsers/login"
   logoutUrl: string = "appUsers/logout"
   isLoggedIn: boolean = false;
+  firstName = ""
 
-  makeNewAccount(credentials){
+  registerUser(credentials){
     return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials);
   }
 
