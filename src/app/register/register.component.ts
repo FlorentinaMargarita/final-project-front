@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   form = {
-    firstName: "",
-    secondName: "",
-    password: "",
-    email: ""
+      firstName: "",
+      secondName: "",
+      password: "",
+      email: ""
 }
   
   constructor(private _userService: UserService,

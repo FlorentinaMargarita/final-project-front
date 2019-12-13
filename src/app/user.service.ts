@@ -45,7 +45,6 @@ export class UserService {
 
   login(credentials){
     return this._http.post(`${this.baseUrl}${this.loginUrl}`, credentials);
-
   }
 
   logout(){
@@ -53,7 +52,6 @@ export class UserService {
   }
 
   getUserCred(userId: string){
-    
     return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`, {headers: this.createHeader()});
   }
 
