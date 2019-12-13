@@ -10,9 +10,15 @@ export class UsernameService {
   
 firstName = " ";
 isLoggedIn;
+loginUrl: string = "appUsers/login"
+
 
   constructor(private _http: HttpClient ) { }
   registerUser(userCredentials){
     return this._http.post(`${this.baseUrl}${this.appUserUrl}`, userCredentials);
-}
-}
+  }
+
+    loginUser(userCredentials){
+      return this._http.post(`${this.baseUrl}${this.loginUrl}`, userCredentials);
+    }
+  }

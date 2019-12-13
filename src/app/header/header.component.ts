@@ -23,7 +23,7 @@ fetch1(searchMovie){
  }
 
  searchMovie(){
- this._api.getData(this.movieTitle)
+ this._api.getData()
  }
 
 }

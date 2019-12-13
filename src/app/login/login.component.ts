@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsernameService } from "../username.service";
-import { SignpostFocusManager } from '@clr/angular/popover/signpost/providers/signpost-focus-manager.service';
+
 
 
 @Component({
@@ -13,7 +13,7 @@ import { SignpostFocusManager } from '@clr/angular/popover/signpost/providers/si
 export class LoginComponent implements OnInit {
   form = {
       // fistName: "",
-      familyName: "",
+      password: "",
       email: ""
   }
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 //   signUp();
 // }
 
-signUp(){ 
+logIn(){ 
   console.log (this.form)
   this._usernameService.registerUser(this.form).subscribe( (res: any)=> { 
     console.log(res)

@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { ResoComponent } from './reso/reso.component'
 import { ApiService } from './api.service';
 import { FacvouriteComponent } from './facvourite/facvourite.component';
+import { UserService } from './user.service';
+import { UsernameService } from './username.service';
 
 
 @NgModule({
@@ -31,7 +33,7 @@ import { FacvouriteComponent } from './facvourite/facvourite.component';
     HttpClientModule
     
   ],
-  providers: [ApiService],
+  providers: [ApiService, UserService, UsernameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

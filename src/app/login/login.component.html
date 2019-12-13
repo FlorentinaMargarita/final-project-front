@@ -7,15 +7,12 @@
         </section>
 
         <div class="login-group">
-            <clr-input-container>
-                <label class="clr-sr-only">First Name</label>
-                <input type="text" name="firstName" [(ngModel)]="form.firstName" clrInput placeholder="First Name"/>
-            </clr-input-container>
-
+      
+<!-- 
             <clr-input-container>
                     <label class="clr-sr-only">Family Name</label>
-                    <input type="text" name="familyName" [(ngModel)]="form.familyName" clrInput placeholder="Family Name"/>
-            </clr-input-container>
+                    <input type="text" name="userName" [(ngModel)]="form.userName" clrInput placeholder="Username"/>
+            </clr-input-container> -->
 
             <clr-input-container>
                     <label class="clr-sr-only">Email</label>
@@ -24,11 +21,11 @@
             
             <clr-password-container>
                 <label class="clr-sr-only">Password</label>
-                <input type="password" name="password" clrPassword placeholder="Password" />
+                <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="form.password" />
             </clr-password-container>
             
       
-            <button (click)="signUp()" type="submit" class="btn btn-primary"> <a routerLink ="facvourite"> Submit </a> </button>
+            <button (click)="logIn()" type="submit" class="btn btn-primary"> <a routerLink ="facvourite"> Submit </a> </button>
         </div>
     </form>
 </div>

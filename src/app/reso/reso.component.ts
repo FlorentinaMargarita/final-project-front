@@ -9,15 +9,16 @@ import { ApiService } from '../api.service';
   providers: [ApiService]
 })
 export class ResoComponent  {
+  movies;
 
   constructor(private _api: ApiService) { }
   ngOnInit() {
-  // this._api.getData()
-  // .subscribe((res: any) => {
-  //   //this.movies = res.results;
-  //   this.movies = res.results;
-  //   console.log("res:", res)
-  //   })
+    
+  this._api.getData()
+  .subscribe((res: any) => {
+    this.movies = res.results;
+    console.log("res:", res)
+    })
   }
 }
 
