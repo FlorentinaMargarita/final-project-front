@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsernameService } from "../username.service";
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { UsernameService } from "../username.service";
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _usernameService: UserService) { }
   logIn(){ 
     console.log (this.form)
     this._usernameService.registerUser(this.form).subscribe( (res: any)=> { 
