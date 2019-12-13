@@ -12,9 +12,9 @@ import { UserService } from '../user.service';
 
 export class LoginComponent implements OnInit {
   form = {
-      // fistName: "",
-      password: "",
-      email: ""
+  // fistName: "",
+  password: "",
+  email: ""
   }
 
   constructor(
