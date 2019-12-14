@@ -1,13 +1,11 @@
-
-    
-    <header class="header-6">
+  <header class="header-6">
         <div class="branding">
             <a href="..." class="nav-link">
                 <a routerLink="logIn"> <span class="title"> BPA: Brad Pitt Admirers </span></a>
             </a>
         </div>
         <form class="search">
-            <input type="text" [(ngModel)]="movieTitle" [ngModelOptions]="{standalone: true}" placeholder="Hollywood starts" >
+            <input type="text" [(ngModel)]="movieTitle" name="first" placeholder="Hollywood starts" >
             <button (click)="fetch1()" >Click </button>
         </form>
     

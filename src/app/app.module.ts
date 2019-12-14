@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
@@ -14,6 +13,7 @@ import { ApiService } from './api.service';
 import { FacvouriteComponent } from './facvourite/facvourite.component';
 import { UserService } from './user.service';
 import { RegisterComponent } from './register/register.component';
+import { MovieService } from './movie.service';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule
     
   ],
-  providers: [ApiService, UserService],
+  providers: [ApiService, UserService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

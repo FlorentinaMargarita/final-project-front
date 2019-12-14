@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, Injectable } from '@angular/core';
 import { ApiService } from '../api.service';
+import { MovieService } from '../movie.service';
 
 
 @Component({
@@ -9,16 +10,9 @@ import { ApiService } from '../api.service';
   providers: [ApiService]
 })
 export class ResoComponent  {
-  movies;
 
-  constructor(private _api: ApiService) { }
+  constructor(private _movieService: MovieService) { }
   ngOnInit() {
-    
-  this._api.getData()
-  .subscribe((res: any) => {
-    this.movies = res.results;
-    console.log("res:", res)
-    })
   }
 }
 

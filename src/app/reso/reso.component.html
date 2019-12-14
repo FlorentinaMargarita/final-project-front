@@ -1,15 +1,15 @@
 <div class="reso">
     <div class="frameLeftSide">
         <div class="frameLeftSide2">
-<div class="leftSide">
-    <div *ngFor="let movie of _api.movies"> 
-       <li> {{movie | json}}</li> 
-                   </div>
+<div class="leftSide" *ngFor="let movie of _movieService?.movies"> 
+       <!-- <li> {{movie | json}}</li> 
+                   -->
                 <p class="card-text">
                     Here are the results: 
-                    {{_api.title}}
+
+                    <li>{{movie.title}}</li>
                 </p>
-</div>
+            </div>
 </div>
 </div>
 <div class="middle"> </div>
