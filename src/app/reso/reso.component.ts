@@ -11,8 +11,18 @@ import { MovieService } from '../movie.service';
 })
 export class ResoComponent  {
 
-  constructor(private _movieService: MovieService) { }
-  ngOnInit() {
-  }
+  movies: any;
+
+  constructor(
+    private _movieService: MovieService,
+    private _apiService: ApiService
+    ) { }
+
+  ngOnInit() {}
+
+  // getMovieImagePath(poster_path: string){
+  //   return this._apiService.getMovieImagePath(poster_path)
+  // }
+
 }
 

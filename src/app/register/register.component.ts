@@ -15,8 +15,10 @@ export class RegisterComponent implements OnInit {
     email: ""
   }
   
-  constructor(private _userService: UserService,
-    private router: Router) { }
+  constructor(
+    private _userService: UserService,
+    private router: Router
+    ) { }
 
   register(){ 
     console.log (this.form)

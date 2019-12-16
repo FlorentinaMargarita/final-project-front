@@ -28,8 +28,6 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('userId', res.userId);
       this._userService.firstName = res.firstName;
       this._userService.isLoggedIn = true;
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-      fetch('http://localhost:8080/posts', { mode: 'no-cors' });
       this.goToDash();
     })
   }
@@ -37,7 +35,6 @@ export class LoginComponent implements OnInit {
   goToDash(){
     this.router.navigate(['/reso'])
   }
-    
 
   ngOnInit() {
   }

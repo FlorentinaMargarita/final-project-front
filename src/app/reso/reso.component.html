@@ -1,22 +1,21 @@
-<div class="reso">
-    <div class="frameLeftSide">
-        <div class="frameLeftSide2">
-<div class="leftSide" *ngFor="let movie of _movieService?.movies"> 
-       <!-- <li> {{movie | json}}</li> 
-                   -->
-                <p class="card-text">
-                    Here are the results: 
 
-                    <li>{{movie.title}}</li>
-                </p>
-            </div>
+<div class = "reso">
+<div class="leftSide">
+<p>Here are the results</p>
+<ul *ngFor="let movie of _movieService?.movies">
+    <li>{{movie.title}} </li>
+</ul>
+    <!-- <img src="https://image.tmdb.org/t/p/" + {{movie.posterPath}}> -->
+    <!-- <img src="https://image.tmdb.org/t/p/ + movie.posterPath"> -->
+    <!-- <img src="https://image.tmdb.org/t/p/" + movie.posterPath> -->
+    <!-- <img src="http://image.tmdb.org/t/p/" + {{movie.posterPath}}>  Here I tried to use http instead of https--> 
+    <!-- <img src="https://image.tmdb.org/t/p/ + {{movie.posterPath}}" />  Here I put in the slash at the end--> 
+    <!-- <img src="https://image.tmdb.org/t/p/ + w154/ + movie.posterPath" > -->
+  
+<div class="middle"> 
+    <img src="https://image.tmdb.org/t/p/ + w154/ + {{movie.posterPath}}">
 </div>
-</div>
-<div class="middle"> </div>
 <div class="rightSide">
-                <img src="https://static.highsnobiety.com/thumbor/daIabyQ2l-mPFIcZ4qpX4BattfU=/fit-in/480x320/smart/static.highsnobiety.com/wp-content/uploads/2019/08/06144734/brad-pitt-90s-style-main01.jpg">
-            </div>
-        </div>
-            
-      
+</div>
+
 
