@@ -11,8 +11,11 @@
     
         <div class="header-actions">
                 <a href="javascript://" class="nav-link nav-icon-text">
+                    <div *ngFor="let user of _userService"> 
+                        {{user.firstName}} </div>
                     <clr-icon shape="user"></clr-icon>
-                    <span class="nav-text">{{username}}</span>
+                    
+                   
                 </a>
             </div>
 

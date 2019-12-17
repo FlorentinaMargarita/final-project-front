@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
 import { MovieService } from '../movie.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,14 @@ export class HeaderComponent  {
 
   movieTitle = '';
   
-  constructor(private router: Router, private _api: ApiService, private _movieService: MovieService) { }
-  
-  // I tried to make a higher-order function, to be able for it to route 
-  //to the result(reso)-component and only then in the second searchMovie Function it should look for movies:
+  constructor(
+    private router: Router, 
+    private _api: ApiService, 
+    private _movieService: MovieService,
+    private _userService: UserService
+    ) { }
+
+
 
   fetch1(){
   // populate  movie service 
@@ -26,7 +31,6 @@ export class HeaderComponent  {
       //console.log("res:", res)
       this.router.navigate(['/reso']);
       })
-   
   }
 }
 
