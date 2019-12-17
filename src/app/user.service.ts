@@ -14,12 +14,15 @@ export class UserService {
   logoutUrl: string = "appUsers/logout"
   isLoggedIn: boolean = false;
   firstName = ""
+  userFavoritedMovies
 
   registerUser(credentials){
     return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials);
   }
 
   login(credentials){
+    //get favorited movies
+    //set the subscribe res to userFavoritedMovies
     return this._http.post(`${this.baseUrl}${this.loginUrl}`, credentials);
   }
 

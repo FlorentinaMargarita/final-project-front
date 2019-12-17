@@ -34,10 +34,11 @@ export class MovieService {
    
   getFavorites(){
     const userId = sessionStorage.getItem("userId");
-    const URL = `${ this.favoriteUrl}/${userId}/favourites`;
+    const URL = `${this.favoriteUrl}/${userId}/favourites`;
     return this._http.get(URL).subscribe( res => {
       this.favorites = res;
       console.log("this.favorites:", this.favorites)
+      this.router.navigate(['/facvourite'])
     })
   }
 }
