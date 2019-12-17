@@ -20,8 +20,6 @@ export class HeaderComponent  {
     private _userService: UserService
     ) { }
 
-
-
   fetch1(){
   // populate  movie service 
   this._api.search(this.movieTitle)
