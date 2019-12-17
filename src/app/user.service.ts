@@ -21,8 +21,6 @@ export class UserService {
   }
 
   login(credentials){
-    //get favorited movies
-    //set the subscribe res to userFavoritedMovies
     return this._http.post(`${this.baseUrl}${this.loginUrl}`, credentials);
   }
 

@@ -16,10 +16,6 @@ export class MovieService {
   favoriteUrl: string = `http://localhost:3000/api/appUsers`;
   favoritedMovie
  
-  /* Todo 
-    Store a Favorite on backend
-    Display on favorite component
-  */
 
   addToFavorites(movie: any){
     this.favoritedMovie = movie;
@@ -27,8 +23,7 @@ export class MovieService {
     const URL = `${ this.favoriteUrl}/${userId}/favourites`;
     // this.favorites.push(movie.id);
     // this.getFavorites()
-    return this._http.post(URL,  {"title": movie.title, "appUserId": userId }) 
-    
+    return this._http.post(URL, {"title": movie.title, "appUserId": userId }) 
   }
 
    

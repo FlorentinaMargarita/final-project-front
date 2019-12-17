@@ -31,10 +31,7 @@ export class ResoComponent  {
     })
   }
 
-  
   goTofavs() {
     this.router.navigate(['/facvourite'])
   }
-
-
   }

@@ -7,8 +7,17 @@
     <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
         <div class="card">
             <div class="card-header">
-                    <h1 *ngFor="let movie of _movieService.favorites">{{movie.title}}</h1>
+                    <!--richtig: klappt!! nicht weggeben: <ul *ngFor="let movie of _movieService.favorites">  -->
+                        
+                        <ul *ngFor="let video of _movieService.favorites"> 
+                        <!-- let movie of _movieService?.movies" -->
+                        <!-- <li>{{movie.title}}  -->
+                            <li>{{video.title}}
+                    <img src="https://image.tmdb.org/t/p/w154/{video.poster_path}}"> </li>
+                </ul>
+                
             </div>
+            
 
             <!-- <div class="card-block">
                         <div class="card-text">
