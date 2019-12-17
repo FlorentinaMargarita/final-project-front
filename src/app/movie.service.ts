@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MovieService {
-  movies: any [] = ["poster_path"];
+  movies: any [] = [];
   constructor(
     private _http: HttpClient,
     private router: Router
