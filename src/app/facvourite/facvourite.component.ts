@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-facvourite',
@@ -25,9 +27,12 @@ friend6;
 reason3;
 
 
-  constructor() { }
+  constructor(
+    private _movieService: MovieService,
+    private _apiService: ApiService) { }
 
   ngOnInit() {
+    //call favorited movies endpoint function in service
   }
 
 }

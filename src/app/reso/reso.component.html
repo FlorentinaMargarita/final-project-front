@@ -4,18 +4,21 @@
 <p>Here are the results</p>
 <ul *ngFor="let movie of _movieService?.movies">
     <li>{{movie.title}} </li>
+    <button (click) = "addToFavorites(movie)"> ❤️</button>
+    <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
 </ul>
-    <!-- <img src="https://image.tmdb.org/t/p/" + {{movie.posterPath}}> -->
-    <!-- <img src="https://image.tmdb.org/t/p/ + movie.posterPath"> -->
-    <!-- <img src="https://image.tmdb.org/t/p/" + movie.posterPath> -->
-    <!-- <img src="http://image.tmdb.org/t/p/" + {{movie.posterPath}}>  Here I tried to use http instead of https--> 
-    <!-- <img src="https://image.tmdb.org/t/p/ + {{movie.posterPath}}" />  Here I put in the slash at the end--> 
-    <!-- <img src="https://image.tmdb.org/t/p/ + w154/ + movie.posterPath" > -->
+  
   
 <div class="middle"> 
-    <img src="https://image.tmdb.org/t/p/ + w154/ + {{movie.posterPath}}">
+ 
 </div>
 <div class="rightSide">
 </div>
 
 
+  <!-- <img src="https://image.tmdb.org/t/p/" + {{movie.posterPath}}> -->
+    <!-- <img src="https://image.tmdb.org/t/p/ + movie.posterPath"> -->
+    <!-- <img src="https://image.tmdb.org/t/p/" + movie.posterPath> -->
+    <!-- <img src="http://image.tmdb.org/t/p/" + {{movie.posterPath}}>  Here I tried to use http instead of https--> 
+    <!-- <img src="https://image.tmdb.org/t/p/ + {{movie.posterPath}}" />  Here I put in the slash at the end--> 
+    <!-- <img src="https://image.tmdb.org/t/p/ + w154/ + movie.posterPath" > -->

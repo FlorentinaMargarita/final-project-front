@@ -7,9 +7,10 @@
     <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
         <div class="card">
             <div class="card-header">
-                    <h1> <input type="text" [(ngModel)]="title1" clrInput placeholder="movie title"/> </h1>
+                    <h1 *ngFor="let movie of _movieService.favorites">{{movie.title}}</h1>
             </div>
-            <div class="card-block">
+
+            <!-- <div class="card-block">
                         <div class="card-text">
                  <p> <strong>Person I want to watch it with </strong></p>
 
@@ -83,6 +84,6 @@
                             </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 
