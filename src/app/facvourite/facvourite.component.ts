@@ -10,7 +10,7 @@ import { MovieService } from '../movie.service';
 export class FacvouriteComponent implements OnInit {
 
   favorites: any;
-  
+  movie: any;
   // //card 1
 //   title1;
 //   friend1;
@@ -36,6 +36,20 @@ export class FacvouriteComponent implements OnInit {
 
   ngOnInit() {
     //call favorited movies endpoint function in service
+  }
+
+  deleteFavorites(movie){
+    this._movieService.deleteFavorites(movie).subscribe( (res: any) => {
+      console.log(res)
+    })
+  }
+
+  
+  addToFavorites(movie){
+    this._movieService.addToFavorites(movie).subscribe( (res: any) => {
+      console.log(res)
+    
+    })
   }
 
 }
