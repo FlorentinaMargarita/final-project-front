@@ -19,10 +19,11 @@ export class MovieService {
   addToFavorites(movie: any){
     this.favoritedMovie = movie;
     const userId = sessionStorage.getItem("userId");
-    const URL = `${ this.favoriteUrl}/${userId}/favourites`;
+    const URL = `${ this.favoriteUrl}/${userId}/favourites?access_token=${token}`;
     // this.favorites.push(movie.id);
     // this.getFavorites()
     return this._http.post(URL, {"title": movie.title, "poster_path": movie.poster_path, "appUserId": userId }) 
+    //+ `?access_token=` + token,
   }
 
   getFavorites(){
