@@ -5,90 +5,23 @@
 </div>
 <div class="clr-row">
     <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
+
+        <div *ngFor="let movie of _movieService?.favorites">  
         <div class="card">
             <div class="card-header">
-                     <div *ngFor="let movie of _movieService?.favorites">            
-                            <span>{{movie.title}}   <button (click)="deleteFavorites()">🎬delete</button> <br>
-                    <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">  <br> <br> <br> <br></span>
-                </div>
-                
-            </div>
-            
-
-            <!-- <div class="card-block">
-                        <div class="card-text">
-                 <p> <strong>Person I want to watch it with </strong></p>
-
-                    <input type="text" [(ngModel)]="friend1" clrInput placeholder="Friends's name"/>
-
-                        <input type="text" [(ngModel)]="friend2" clrInput placeholder="Friends's name"/> 
-
-                        <p> <strong> Why I want to watch it? </strong></p>
-                            <form class="clr-form">
-                                <div class="clr-control-container">
-                                  <textarea placeholder="Actor, Genre, Trailer,..." class="clr-textarea" [(ngModel)]="reason"></textarea>
-                                </div> 
-                                <div class="card-img">
-                                        <img src="https://nyppagesix.files.wordpress.com/2019/12/brad-pitt-1.jpg?quality=90&strip=all&w=618&h=410&crop=1">
-                                    </div>
-                              </form>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="clr-row">
-            <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
-                <div class="card">
-                    <div class="card-header">
-                            <h1> <input type ="text" [(ngModel)]="title2" clrInput placeholder="movie title"/></h1>
-                    </div>
-                    <div class="card-block">
-                                <div class="card-text">
-                         <p> <strong>Person I want to watch it with </strong></p>
-                            <input type="text" [(ngModel)]="friend3" clrInput placeholder="Friends's name"/>
-                                <input type="text" [(ngModel)]="friend4" clrInput placeholder="Friends's name"/>
-                                <p> <strong> Why I want to watch it? </strong></p>
-                                    <form class="clr-form">
-                                        <div class="clr-control-container">
-                                          <textarea placeholder="Actor, Genre, Trailer,..." class="clr-textarea" [(ngModel)]="reason2"> </textarea>
-                                        </div>
-                                        <div class="card-img">
-                                                <img src="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2019/09/931/524/brad-pitt-ad-astra-tokyo-getty.jpg?ve=1&tl=1">
-                                            </div>
-                                      </form>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="clr-row">
-                    <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                    <h1> <input type= "text" [(ngModel)]="title3" clrInput placeholder="movie title"/> </h1>
-                            </div>
-                            <div class="card-block">
-                                        <div class="card-text">
-                                 <p> <strong>Person I want to watch it with </strong></p>
-                                    <input type="text" [(ngModel)]="friend5" clrInput placeholder="Friends's name"/>
-                                        <input type="text" [(ngModel)]="friend6" clrInput placeholder="Friends's name"/>
-                
-                                        <p> <strong> Why I want to watch it? </strong></p>
-                                            <form class="clr-form">
-                                                <div class="clr-control-container">
-                                                  <textarea placeholder="Actor, Genre, Trailer,..." class="clr-textarea" [(ngModel)]="reason3"></textarea>
-                                                </div>
-                                                <div class="card-img">
-                                                        <img src="https://content.api.news/v3/images/bin/0dccd1426826e2b04935ba0b2be3f6ab">
-                                                    </div>
-                                              </form>
-                                </div>
-                            </div>
+            <div class="card-block">
+                     <!-- <div *ngFor="let movie of _movieService?.favorites">             -->
+                            <span>{{movie.title}} <button (click)="_movieService.deleteFavorites(movie.title)">🎬delete</button> <br>
+                    <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">  <br> </span>
+                    
+                                <span> Why I want to watch it? </span> <br>
+                                <span> With whom I want to watch it? </span> <br>
+                                <button> <a href="www.gmail.com"> Email-Invitation </a></button> <br>
+                                <button> <a href="www.facebook.com"> Facebook-Invitation </a></button> <br>
+                                <br> <br> 
                             </div>
                         </div>
-                    </div> -->
+                                
+                </div>
                 </div>
                 

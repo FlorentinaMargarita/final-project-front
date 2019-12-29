@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { MovieService } from '../movie.service';
 
+
 @Component({
   selector: 'app-facvourite',
   templateUrl: './facvourite.component.html',
@@ -11,45 +12,46 @@ export class FacvouriteComponent implements OnInit {
 
   favorites: any;
   movie: any;
-  // //card 1
-//   title1;
-//   friend1;
-//   friend2;
-//   reason;
-
-// //card 2
-// title2;
-// friend3;
-// friend4;
-// reason2;
-
-// //card 3
-// title3;
-// friend5;
-// friend6;
-// reason3;
-
+  index;
 
   constructor(
     private _movieService: MovieService,
-    private _apiService: ApiService) { }
+    private _apiService: ApiService) { 
+
+    }
 
   ngOnInit() {
-    //call favorited movies endpoint function in service
+    this._movieService.getFavorites();
   }
 
   deleteFavorites(movie){
-    this._movieService.deleteFavorites(movie).subscribe( (res: any) => {
-      console.log(res)
-    })
+    this._movieService.deleteFavorites(movie);
   }
-
   
-  addToFavorites(movie){
-    this._movieService.addToFavorites(movie).subscribe( (res: any) => {
-      console.log(res)
-    
-    })
-  }
+
+  // deleteFavorites(movie){
+  // for (var i = 0; i< this.favorites.length; i++) {
+  //   if (this.favorites[i]["movie"]== movie) {
+  //     this.favorites.splice(i,1)
+  //   }}
+  //   this.movie.delete();
+  //   this._movieService.deleteFavorites(movie).subscribe( (res: any) => {
+  //         console.log(res)
+  //       })
+
+  // }
+
+  // deleteFavorites(movie){
+  //   this._movieService.deleteFavorites(movie).subscribe( (res: any) => {
+  //     console.log(res)
+  //   })
+  // }
+
+
+  // addToFavorites(movie){
+  //   this._movieService.addToFavorites(movie).subscribe( (res: any) => {
+  //     console.log(res)
+  //   })
+  // }
 
 }

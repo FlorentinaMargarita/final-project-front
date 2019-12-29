@@ -12,13 +12,14 @@ import { UserService } from '../user.service';
 export class HeaderComponent  {
 
   movieTitle = '';
+  user=``;
   
   constructor(
     private router: Router, 
     private _api: ApiService, 
     private _movieService: MovieService,
     private _userService: UserService
-    ) { }
+    ) {     }
 
   fetch1(){
   // populate  movie service 
@@ -26,10 +27,21 @@ export class HeaderComponent  {
     .subscribe((res: any) => {
       console.log(res.results)
       this._movieService.movies  = res.results;
+      this._userService.getUserCred(this.user)
       //console.log("res:", res)
       this.router.navigate(['/reso']);
       })
   }
+
+  best() {
+  this.router.navigate(['/logIn']);
+}
+
+best1() {
+  this.router.navigate(['/register']);
+}
+
+
 }
 
 

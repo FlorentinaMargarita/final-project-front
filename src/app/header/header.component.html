@@ -1,24 +1,28 @@
-  <header class="header-6">
-        <div class="branding">
-            <a href="..." class="nav-link">
-                <a routerLink="logIn"> <span class="title"> BPA: Brad Pitt Admirers </span></a>
-            </a>
-        </div>
-        <form class="search">
-            <input type="text" [(ngModel)]="movieTitle" name="first" placeholder="Hollywood starts" >
-            <button (click)="fetch1()" >Click </button>
-        </form>
-    
-        <div class="header-actions">
-                <a href="javascript://" class="nav-link nav-icon-text">
-                    <div *ngFor="let user of _userService"> 
-                        {{user.firstName}} </div>
-                    <clr-icon shape="user"></clr-icon>
-                    
-                </a>
-            </div>
+<header class="header-6">
+    <div class="branding">
+        <a href="..." class="nav-link">
+            <a routerLink="logIn"> <span class="title"> BPA: Brad Pitt Admirers </span></a>
+        </a>
+    </div>
+    <form class="search">
+        <input type="text" [(ngModel)]="movieTitle" name="first" placeholder="Hollywood starts">
+        <button (click)="fetch1()">Click </button>
+    </form>
 
-        <button (click)="_movieService.getFavorites()">Get Favorites</button>
-    </header>
-    
-    
+    <div class="header-actions">
+        <div *ngFor="let name of _userService.userId">
+            {{name.firstName}}
+        </div>
+        <a href="javascript://" class="nav-link nav-icon-text">
+           
+            <clr-icon shape="user"></clr-icon>
+        </a>
+    </div>
+
+    <button class="button" (click)="best()">LogIn </button>
+
+    <button class="button" (click)="best1()">Register </button>
+
+    <button class="button" (click)="_movieService.getFavorites()">Get Favorites</button>
+
+</header>
