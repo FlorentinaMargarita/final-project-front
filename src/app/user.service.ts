@@ -31,7 +31,7 @@ export class UserService {
     return this._http.post(`${this.baseUrl}${this.loginUrl}`, credentials);
   }
 
-  UserUrl: string = `http://localhost:3000/api/appUsers`;
+  UserUrl: string = `https://movie-demo-florentina-be.herokuapp.com`;
 
 
 //   getUserInfo(user){
