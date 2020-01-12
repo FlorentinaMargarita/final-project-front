@@ -15,8 +15,8 @@ export class FacvouriteComponent implements OnInit {
   index;
 
   constructor(
-    private _movieService: MovieService,
-    private _apiService: ApiService) { 
+    public _movieService: MovieService,
+    public _apiService: ApiService) {
 
     }
 
@@ -27,7 +27,7 @@ export class FacvouriteComponent implements OnInit {
   deleteFavorites(movie){
     this._movieService.deleteFavorites(movie);
   }
-  
+
 
   // deleteFavorites(movie){
   // for (var i = 0; i< this.favorites.length; i++) {

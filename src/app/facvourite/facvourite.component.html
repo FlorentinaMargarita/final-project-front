@@ -1,27 +1,25 @@
-
-<div class = "leftSide">
-<div class ="title"> 
-<h1> <em>Here are the movies you want to watch </em></h1>
-</div>
-<div class="clr-row">
+<div class="leftSide">
+  <div class="title">
+    <h1> <em>Here are the movies you want to watch </em></h1>
+  </div>
+  <div class="clr-row">
     <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
 
-        <div *ngFor="let movie of _movieService?.favorites">  
+      <div *ngFor="let movie of _movieService?.favorites">
         <div class="card">
-            <div class="card-header">
+          <div class="card-header">
             <div class="card-block">
-                     <!-- <div *ngFor="let movie of _movieService?.favorites">             -->
-                            <span>{{movie.title}} <button (click)="_movieService.deleteFavorites(movie.title)">🎬delete</button> <br>
-                    <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">  <br> </span>
-                    
-                                <span> Why I want to watch it? </span> <br>
-                                <span> With whom I want to watch it? </span> <br>
-                                <button> <a href="www.gmail.com"> Email-Invitation </a></button> <br>
-                                <button> <a href="www.facebook.com"> Facebook-Invitation </a></button> <br>
-                                <br> <br> 
-                            </div>
-                        </div>
-                                
-                </div>
-                </div>
-                
+              <!-- <div *ngFor="let movie of _movieService?.favorites">             -->
+              <span>{{movie.title}} <button (click)="_movieService.deleteFavorites(movie.title)">🎬delete</button> <br>
+                <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}"> <br> </span>
+
+              <span> Why I want to watch it? </span> <br>
+              <span> With whom I want to watch it? </span> <br>
+              <button> <a href="www.gmail.com"> Email-Invitation </a></button> <br>
+              <button> <a href="www.facebook.com"> Facebook-Invitation </a></button> <br>
+              <br> <br>
+            </div>
+          </div>
+
+        </div>
+      </div>

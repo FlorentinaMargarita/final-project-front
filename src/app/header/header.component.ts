@@ -13,16 +13,16 @@ export class HeaderComponent  {
 
   movieTitle = '';
   user=``;
-  
+
   constructor(
-    private router: Router, 
-    private _api: ApiService, 
+    private router: Router,
+    private _api: ApiService,
     private _movieService: MovieService,
-    private _userService: UserService
+    public _userService: UserService
     ) {     }
 
   fetch1(){
-  // populate  movie service 
+  // populate  movie service
   this._api.search(this.movieTitle)
     .subscribe((res: any) => {
       console.log(res.results)
