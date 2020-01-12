@@ -17,7 +17,7 @@ export class HeaderComponent  {
   constructor(
     private router: Router,
     private _api: ApiService,
-    private _movieService: MovieService,
+    public _movieService: MovieService,
     public _userService: UserService
     ) {     }
 

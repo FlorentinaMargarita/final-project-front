@@ -16,9 +16,9 @@ export class ResoComponent  {
   // movie: any;
 
   constructor(
-    private _movieService: MovieService,
+    public _movieService: MovieService,
     private _apiService: ApiService,
-    private router: Router, 
+    private router: Router,
     private _http: HttpClient
     ) { }
 
