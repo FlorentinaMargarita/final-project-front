@@ -17,9 +17,9 @@ export class UserService {
   loginUrl: string = "appUsers/login"
   logoutUrl: string = "appUsers/logout"
   isLoggedIn: boolean = false;
-  firstName = ""
+  firstName = "";
   userFavoritedMovies
-  userId;
+  userId
   credentials: any = {}
   token = sessionStorage.getItem("token");
 
