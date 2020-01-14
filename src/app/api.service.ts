@@ -16,9 +16,9 @@ export class ApiService {
   imageBaseUrl: string = "https://image.tmdb.org/t/p/";
 
   routes = {
-    movie: "movie/",
-    person: "search/person/",
-    movieSearch: "search/movie/"
+    movie: "movie",
+    person: "search/person",
+    movieSearch: "search/movie"
   };
 
   posterSizes: string[] = [
@@ -43,5 +43,5 @@ export class ApiService {
   getMovieImagePath(poster_path: string) {
     return this.imageBaseUrl + this.posterSizes[4] + poster_path;
   }
-  
+
 }
