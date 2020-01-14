@@ -13,9 +13,9 @@ export class UserService {
     ) { }
 
   baseUrl: string = "https://movie-demo-florentina-be.herokuapp.com/";
-  appUserUrl: string = "appUsers/"
-  loginUrl: string = "appUsers/login"
-  logoutUrl: string = "appUsers/logout"
+  appUserUrl: string = "api/appUsers/"
+  loginUrl: string = "api/appUsers/login"
+  logoutUrl: string = "api/appUsers/logout"
   isLoggedIn: boolean = false;
   firstName = "";
   userFavoritedMovies
@@ -23,8 +23,8 @@ export class UserService {
   credentials: any = {}
   token = sessionStorage.getItem("token");
 
-  registerUser(credentials){
-    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, credentials);
+  registerUser(user){
+    return this._http.post(`${this.baseUrl}${this.appUserUrl}`, user);
   }
 
   login(credentials){
@@ -34,6 +34,17 @@ export class UserService {
   UserUrl: string = `https://movie-demo-florentina-be.herokuapp.com`;
 
 
+
+
+    getUserCred(userId: string){
+      return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`);
+  }
+
+  createHeader(){
+    return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'))
+  }
+
+}
 //   getUserInfo(user){
 //     let currentUserId: string = sessionStorage.getItem('userId');
 //     const userId = sessionStorage.getItem("userId");
@@ -51,14 +62,7 @@ export class UserService {
   //   return this._http.post(`${this.baseUrl}${this.logoutUrl}`, sessionStorage.getItem('token'), {headers: this.createHeader()})
   // }
 
-  getUserCred(userId: string){
-    return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`, {headers: this.createHeader()}
+  // getUserCred(userId: string){
+  //   return this._http.get(`${this.baseUrl}${this.appUserUrl}${userId}`, {headers: this.createHeader()}
 
-    );
-  }
-
-  createHeader(){
-    return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'))
-  }
-
-}
+  //   );
