@@ -9,7 +9,7 @@ export class MovieService {
 
   movies: any [] = [];
   favorites;
-  favoriteUrl: string = `https://movie-demo-florentina-be.herokuapp.com/`;
+  favoriteUrl: string = `https://movie-demo-florentina-be.herokuapp.com`;
   favoritedMovie;
   movie;
 
@@ -43,7 +43,7 @@ export class MovieService {
     console.log(movie);
     const userId = sessionStorage.getItem("userId")
     const token = sessionStorage.getItem('token')
-    const URL= `http://localhost:3000/api/appUsers/${userId}/favourites/${movie.id}?access_token=${token}`
+    const URL= `https://movie-demo-florentina-be.herokuapp.com/api/appUsers/${userId}/favourites/${movie.id}?access_token=${token}`
     //const URL = `${this.favoriteUrl}/${userId}/favourites/${movie.id}?access_token=${token}`;
     console.log("URL", URL)
     let movieIndex = this.favorites.indexOf(movie);
