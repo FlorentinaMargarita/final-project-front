@@ -12,7 +12,7 @@ export class UserService {
     public router: Router
     ) { }
 
-  baseUrl: string = "http://localhost:3000/api/";
+  baseUrl: string = "https://movie-demo-florentina-be.herokuapp.com/";
   appUserUrl: string = "appUsers/"
   loginUrl: string = "appUsers/login"
   logoutUrl: string = "appUsers/logout"
