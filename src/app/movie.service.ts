@@ -9,7 +9,7 @@ export class MovieService {
 
   movies: any [] = [];
   favorites;
-  favoriteUrl: string = `movie-demo-florentina-be.herokuapp.com`;
+  favoriteUrl: string = `https://movie-demo-florentina-be.herokuapp.com/`;
   favoritedMovie;
   movie;
 
