@@ -27,7 +27,7 @@ export class HeaderComponent  {
     .subscribe((res: any) => {
       console.log(res.results)
       this._movieService.movies  = res.results;
-      this._userService.getUserCred(this.user)
+      // this._userService.getUserCred(this.user)
       //console.log("res:", res)
       this.router.navigate(['/reso']);
       })

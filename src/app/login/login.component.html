@@ -2,7 +2,7 @@
     <form class="login">
         <section class="title">
             <h3 class="welcome">Welcome to</h3>
-            Brad Pitt Admirers! 
+            Brad Pitt Admirers!
             <h5 class="hint">The movie data base exclusivly about Brad Pitt</h5>
         </section>
 
@@ -12,13 +12,13 @@
                     <label class="clr-sr-only">Email</label>
                     <input type="email" name="email" [(ngModel)]="form.email" clrInput placeholder="Email"/>
             </clr-input-container>
-            
+
             <clr-password-container>
                 <label class="clr-sr-only">Password</label>
                 <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="form.password" />
             </clr-password-container>
-            
-            <button (click)="logIn()" type="submit" class="btn btn-primary">Submit</button>
+
+            <button (click)="dologIn()" type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 </div>
