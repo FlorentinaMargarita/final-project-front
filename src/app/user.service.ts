@@ -20,10 +20,27 @@ export class UserService {
 
   userInfo: any = {};
 
+
+
   login(form) {
     const URL = `${this.baseUrl}${this.loginUrl}`;
     return this._http.post(URL, form);
   }
+
+  registerUser(form){
+    const URL = `${this.baseUrl}${this.appUserUrl}`;
+    return this._http.post(URL, form);
+  }
+
+
+
+  currentUserInfo = "";
+
+  getUserInfo(user){
+     const hi = `${this.baseUrl}${this.appUserUrl}${user.userId}?access_token=${user.token}`
+    return this._http.get(hi, user)
+  }
+
 
   createHeader(){
     return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'))

@@ -21,6 +21,12 @@ export class HeaderComponent  {
     public _userService: UserService
     ) {     }
 
+    ngOnInit() {
+      this._userService.getUserInfo(this.user)
+
+
+    }
+
   fetch1(){
   // populate  movie service
   this._api.search(this.movieTitle)
@@ -40,6 +46,8 @@ export class HeaderComponent  {
 best1() {
   this.router.navigate(['/register']);
 }
+
+
 
 
 }

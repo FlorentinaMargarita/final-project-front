@@ -25,10 +25,12 @@ export class LoginComponent implements OnInit {
     this._userService.login(this.form).subscribe( (res: any)=> {
       console.log(res)
       sessionStorage.setItem('token', res.token); //token is stored in sessionStorage
-
+      this._userService.userInfo = res;
+      this._userService.getUserInfo(res).subscribe((mario: any)=> {
+      this._userService.userInfo = mario;
+      console.log ("getUserInfo", mario)
+      });
       sessionStorage.setItem('userId', res.userId);
-      //this._userService.firstName = res.firstName;
-      // sessionStorage.setItem('loginResponseId', res.id);
       this._userService.loggedIn = true;
       this.router.navigate(['reso'])
     })

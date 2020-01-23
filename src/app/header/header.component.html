@@ -10,12 +10,11 @@
     </form>
 
     <div class="header-actions">
-        <!-- <div *ngFor="let name of _userService.userId">
-            {{name.firstName}}
-        </div> -->
+
         <a href="javascript://" class="nav-link nav-icon-text">
 
             <clr-icon shape="user"></clr-icon>
+            <div>{{_userService.userInfo.firstName}}</div>
         </a>
     </div>
 

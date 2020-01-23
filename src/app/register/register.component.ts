@@ -20,26 +20,28 @@ export class RegisterComponent implements OnInit {
     private router: Router
     ) { }
 
-  // register(){
-  //   console.log (this.form)
-  //   this._userService.registerUser(this.form).subscribe( (res: any)=> {
-  //     console.log(res)
-  //     sessionStorage.setItem('token', res.token); //token is stored in sessionStorage
-  //     sessionStorage.setItem('userId', res.userId);
-  //     sessionStorage.setItem('firstName', res.firstName);
-  //     sessionStorage.setItem('secondName', res.secondName);
+    user: any = {};
 
-      // this._userService.firstName = res.firstName;
-      // this._userService.isLoggedIn = true;
-      // this.goToDash();
-  //   })
-  // }
+     ngOnInit() {}
 
-  goToDash(){
-    this.router.navigate(['/reso'])
+  register(){
+    console.log ("register", this.form)
+    this._userService.registerUser(this.form).subscribe( (res: any)=> {
+      console.log(res)
+      this._userService.userInfo = res; //neu
+      console.log(this._userService.userInfo)
+      sessionStorage.setItem('token', res.token); //token is stored in sessionStorage
+      sessionStorage.setItem('userId', res.userId);
+      sessionStorage.setItem('firstName', res.firstName);
+      sessionStorage.setItem('secondName', res.secondName);
+      this._userService.loggedIn = true;
+      this._userService.loggedIn = true;
+      this.router.navigate(['reso'])
+    })
   }
 
-  ngOnInit() {
-  }
+
+
+
 
 }
