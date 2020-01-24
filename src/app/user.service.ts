@@ -46,11 +46,15 @@ export class UserService {
   }
 
   logOut(user){
+
     const  logoutUrl = "http://localhost:3000/api/appUsers/logout?access_token=";
     console.log("logout", this.token)
     console.log(logoutUrl + this.token, user)
-    return this._http.post(logoutUrl + this.token, user)
+    return this._http.post(logoutUrl + this.token, user).subscribe(data => {})
 }
+
+// currentUserInfo = "";
+
 
 
 

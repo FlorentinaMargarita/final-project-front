@@ -1,23 +1,50 @@
-.reso {
-display: flex;
-flex-wrap: wrap;
-align-content: space-between;
-background-color: #5659b8;
-color: white;
-padding: 20px;
-}
-
 .leftSide{
- display: flex;
- flex-direction: column;
- background-color: #5659b8;
- color: white;
- width: auto;
+background-image: url(https://cdn11.bigcommerce.com/s-mgidzs2fr0/images/stencil/1280x1280/products/333/1092/movie_clapper__14351.1501023497.jpg?c=2&imbypass=on);
+
 }
 
-.rightSide {
-display: flex;
-margin-left: auto;
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: white;
+  font-style: 400 13.3333px Arial;
+  color: #0077b8;
+}
 
+.clr-row  {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
+.card{
+ background-color: #0077b8;
+ padding: 5px;
+ width: auto;
+ box-shadow: cadetblue;
+ font-style: 400 13.3333px Arial;
+}
+
+.card-block{
+  color: white;
+  background-color: rgb(60, 60, 124);
+  padding: 5px;
+  font-style: 400 13.3333px Arial;
+
+}
+
+.span {
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.button {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-left: auto;
+  border-left: 10px;
+}
+
+.login-wrapper {
+  flex-wrap: wrap;
 }

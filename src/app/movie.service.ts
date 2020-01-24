@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,23 +36,21 @@ export class MovieService {
     this.favoritedMovie = movie;
     const userId = sessionStorage.getItem('userId');
     const token = sessionStorage.getItem('token')
-    const URL = `${ this.favoriteUrl}/${userId}/favourites?access_token=${token}`;
+    const URL = `${this.favoriteUrl}/${userId}/favourites?access_token=${token}`; //! Vorsicht erstes Element war ein Abstand nach erstem {
     this.favorites.push(movie);
     return this._http.post(URL, {"title": movie.title, "poster_path": movie.poster_path, "appUserId": userId })
   }
 
 
-
-
-
-  deleteFavorites(movie){
-    console.log(movie);
+  deleteFavorites(movie: any){
+    console.log(movie.movie.id);
     const userId = sessionStorage.getItem('userId');
     const token = sessionStorage.getItem('token')
-    const deleteURL =`${ this.favoriteUrl}/${userId}/favourites?access_token=${token}`;
-    return this._http.delete(deleteURL)
-
+    const deleteURL = `${this.favoriteUrl}/${userId}/favourites/${movie.id}?access_token=${token}`;
+    return this._http.delete(deleteURL).subscribe( data => {})
   }
+
+//http://localhost:3000/api/appUsers/ID VOM APP USER/favourites/MOVIEID?access_token=TOKEN
 
 
   createHeader(){

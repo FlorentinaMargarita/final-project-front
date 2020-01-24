@@ -38,16 +38,16 @@ export class HeaderComponent  {
   }
 
 
-  logout(){
-    this._userService.logOut(this.user).subscribe( (res: any)=> {
-      console.log(res)
-      sessionStorage.setItem('token', res.token);
-      this._userService.userInfo = res;
-      this._userService.loggedIn = false;
-      this.router.navigate(['/logIn']);
-      sessionStorage.clear();
-        })
-    }
+  // logout(){
+  //   this._userService.logOut(this.user).subscribe( (res: any)=> {
+  //     console.log(res)
+  //     sessionStorage.setItem('token', res.token);
+  //     this._userService.userInfo = res;
+  //     this._userService.loggedIn = false;
+  //     this.router.navigate(['/logIn']);
+  //     sessionStorage.clear();
+  //       })
+  //   }
 
 
 // this._userService.login(this.form).subscribe( (res: any)=> {

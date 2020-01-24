@@ -27,7 +27,7 @@
     <clr-dropdown-menu *clrIfOpen clrPosition="bottom-left">
       <div class="dropdown-item" (click)="best()">Login</div>
       <div class="dropdown-item" (click)="best1()">Register</div>
-      <div class="dropdown-item" (click)="logout()">Logout</div>
+      <div class="dropdown-item" (click)="_userService.logOut()">Logout</div>
       <div class="dropdown-item" (click)="_movieService.getFavorites()">Favourites</div>
     </clr-dropdown-menu>
   </clr-dropdown>
