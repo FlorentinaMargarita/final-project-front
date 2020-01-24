@@ -14,9 +14,9 @@ export class UserService {
   appUserUrl: string = "api/appUsers/";
   // loginUrl: string = `api/appUsers/login?access_token=`;
   loginUrl: string = `api/appUsers/login`;
-  logoutUrl: string = "api/appUsers/logout";
   loggedIn: boolean = false;
   userFavoritedMovies;
+  token = sessionStorage.getItem("token");
 
   userInfo: any = {};
 
@@ -32,12 +32,11 @@ export class UserService {
     return this._http.post(URL, form);
   }
 
-
-
   currentUserInfo = "";
 
   getUserInfo(user){
      const hi = `${this.baseUrl}${this.appUserUrl}${user.userId}?access_token=${user.token}`
+     this.token = user.token;
     return this._http.get(hi, user)
   }
 
@@ -45,6 +44,18 @@ export class UserService {
   createHeader(){
     return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'))
   }
+
+  logOut(user){
+    const  logoutUrl = "http://localhost:3000/api/appUsers/logout?access_token=";
+    console.log("logout", this.token)
+    console.log(logoutUrl + this.token, user)
+    return this._http.post(logoutUrl + this.token, user)
+}
+
+
+
+
+
 
   ngOnInit() {}
 }

@@ -2,20 +2,22 @@
 display: flex;
 flex-wrap: wrap;
 align-content: space-between;
-background-color: #00BFA9;
+background-color: #5659b8;
+color: white;
 padding: 20px;
 }
 
 .leftSide{
  display: flex;
  flex-direction: column;
- background-color: #00BFA9;
- color: #006668;
+ background-color: #5659b8;
+ color: white;
  width: auto;
 }
 
 .rightSide {
 display: flex;
 margin-left: auto;
+
 
 }

@@ -1,22 +1,24 @@
 <div class="leftSide">
   <div class="title">
-    <h1> <em>Here are the movies you want to watch </em></h1>
+    <h2 class="title">  Here are the movies you want to watch</h2>
   </div>
   <div class="clr-row">
     <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
 
       <div *ngFor="let movie of _movieService?.favorites">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-block">
+        <div class="card" color="white">
+          <div class="card-header" color="white">
+            <div class="card-block" style="color:  #5659b8">
               <!-- <div *ngFor="let movie of _movieService?.favorites">             -->
-              <span>{{movie.title}} <button (click)="_movieService.deleteFavorites(movie.title)">🎬delete</button> <br>
-                <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}"> <br> </span>
+              <!-- <span>{{movie.title}} <br> -->
+                <span>
+                <img class="img" src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}"> <br> </span>
 
-              <span> Why I want to watch it? </span> <br>
-              <span> With whom I want to watch it? </span> <br>
-              <button> <a href="www.gmail.com"> Email-Invitation </a></button> <br>
-              <button> <a href="www.facebook.com"> Facebook-Invitation </a></button> <br>
+              <span class="btn btn-outline"> Why I want to watch it? </span> <br>
+              <span class="btn btn-outline"> With whom I want to watch it? </span> <br>
+              <button class="btn btn-outline" (click)="_movieService.deleteFavorites(movie.title)">🎬delete</button>
+              <button class="btn btn-outline"> <a href="www.gmail.com"> Email-Invitation </a></button> <br>
+              <button class="btn btn-outline"> <a href="www.facebook.com"> Facebook-Invitation </a></button> <br>
               <br> <br>
             </div>
           </div>

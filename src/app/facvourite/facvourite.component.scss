@@ -3,24 +3,41 @@
 .title {
     display: flex;
     flex-wrap: wrap;
-    background-color:#A7F4E9
+    padding: 10px;
+    background-color: white;
+    color: cornflowerblue;
 }
 
 .clr-row {
-   background-color: #FFFCE8
+   background-color: #5659b8;
+}
+
+.card {
+  padding: 10px;
 }
 
 .card-header {
-    background-color: white;
+    background-color: #5659b8;
     padding: 10px;
 }
 
+.img {
+  padding: 10px;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  margin-left: 30px;
+}
+
 .card-block {
-    background-color:#DEFFF9;
+    background-color: whitesmoke;
+    padding: 10px;
+    margin-left: 10px;
 
 }
 
 .card-text {
     background-color: #00D4B8
+
 }
 

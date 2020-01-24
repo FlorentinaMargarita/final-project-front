@@ -1,27 +1,43 @@
 <header class="header-6">
-    <div class="branding">
-        <a href="..." class="nav-link">
-            <a routerLink="logIn"> <span class="title"> BPA: Brad Pitt Admirers </span></a>
-        </a>
-    </div>
-    <form class="search">
-        <input type="text" [(ngModel)]="movieTitle" name="first" placeholder="Hollywood starts">
-        <button (click)="fetch1()">Click </button>
-    </form>
+  <div class="btn btn-outline">
+    <a href="..." class="nav-link">
+      <a routerLink="logIn"> <span style="color: #0077b8"> BPA: Brad Pitt Admirers </span></a>
+    </a>
+  </div>
 
-    <div class="header-actions">
+    <input type="text"  style= "color:#5659b8" class="btn btn-outline" [(ngModel)]="movieTitle" name="first" placeholder="Find movies...">
 
-        <a href="javascript://" class="nav-link nav-icon-text">
+  <button class="btn btn-outline"  [(ngModel)]="movieTitle" (click)="fetch1()">Search</button>
 
-            <clr-icon shape="user"></clr-icon>
-            <div>{{_userService.userInfo.firstName}}</div>
-        </a>
-    </div>
+<!--
+      <div class="branding">
 
-    <button class="button" (click)="best()">LogIn </button>
+      <span *ngIf="_userService.userInfo">Hello {{_userService.userInfo.firstName}}</span>
+    <!-- </a> -->
+  <!-- </div>  -->
 
-    <button class="button" (click)="best1()">Register </button>
 
-    <button class="button" (click)="_movieService.getFavorites()">Get Favorites</button>
+
+<div class="gurke" *ngIf="_userService.userInfo">{{_userService.userInfo.firstName}}</div>
+
+  <clr-dropdown class="btn btn-link">
+    <button clrDropdownTrigger class="btn btn-outline">
+      <clr-icon shape="user"></clr-icon>
+    </button>
+    <clr-dropdown-menu *clrIfOpen clrPosition="bottom-left">
+      <div class="dropdown-item" (click)="best()">Login</div>
+      <div class="dropdown-item" (click)="best1()">Register</div>
+      <div class="dropdown-item" (click)="logout()">Logout</div>
+      <div class="dropdown-item" (click)="_movieService.getFavorites()">Favourites</div>
+    </clr-dropdown-menu>
+  </clr-dropdown>
+  <!--
+    <button class="btn btn-outline" (click)="best()">LogIn </button>
+
+    <button class="btn btn-outline" (click)="best1()">Register </button>
+
+    <button class="btn btn-outline" (click)="logOut()">LogOut </button> -->
+
+  <!-- <button class="btn btn-outline" (click)="_movieService.getFavorites()">Get Favorites</button> -->
 
 </header>

@@ -1,5 +1,5 @@
 
-<div class = "reso">
+<!-- <div class = "reso">
 <div class="leftSide">
 <p>Here are the results</p>
 <ul *ngFor="let movie of _movieService?.movies">
@@ -7,9 +7,25 @@
     <button (click) = "addToFavorites(movie)"> ❤️</button>
     <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
 </ul>
-  
-<div class="middle"> 
- 
+
+<div class="middle">
+
 </div>
 <div class="rightSide">
-</div>
+</div> -->
+
+<div class="login-wrapper">
+<div class = "reso">
+  <div class="leftSide">
+  <h1 style="color:white">Here are the results</h1>
+  <ul *ngFor="let movie of _movieService?.movies">
+      <li>{{movie.title}} </li>
+      <button (click) = "addToFavorites(movie)"> ❤️</button>
+      <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
+  </ul>
+<!--
+  <div class="middle">
+
+  </div> -->
+
+  </div>
