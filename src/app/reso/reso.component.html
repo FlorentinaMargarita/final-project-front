@@ -3,20 +3,19 @@
   <h1 class="title">  Here are the results</h1>
 </div>
 <div class="leftSide">
-  <div class="clr-row">
-    <div class="clr-col-lg-4 clr-col-md-5 clr-col-12">
+  <!-- <div class="clr-row">
+    <div class="clr-col-lg-4 clr-col-md-5 clr-col-12"> -->
 
   <div *ngFor="let movie of _movieService?.movies">
     <div class="card" color="white">
-      <div class="card-header" color="white"></div>
       <div class="card-block">
         <h3  class="span" style="color: white;">{{movie.title}} <button class="btn btn-outline"(click) = "addToFavorites(movie)"> ❤️</button></h3>
 <br> <br>
     <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
 
 
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
   </div>
 </div>
     </div>

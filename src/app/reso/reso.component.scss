@@ -1,6 +1,8 @@
 .leftSide{
-background-image: url(https://cdn11.bigcommerce.com/s-mgidzs2fr0/images/stencil/1280x1280/products/333/1092/movie_clapper__14351.1501023497.jpg?c=2&imbypass=on);
-
+background-image: linear-gradient(rgb(130, 130, 214), lightblue);
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
 }
 
 .title {

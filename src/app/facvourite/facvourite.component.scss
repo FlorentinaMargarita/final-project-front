@@ -1,6 +1,5 @@
 
 
-
 .title {
     display: flex;
     flex-wrap: wrap;
@@ -11,14 +10,19 @@
     ;
 }
 
-.clr-row {
+.try {
    background-color: #5659b8;
-   background-image: url(https://images-na.ssl-images-amazon.com/images/I/813M%2B1UXw5L._AC_SL1500_.jpg);
+  //  background-image: url(https://www.displayfakefoods.com/store/pc/catalog/2447-lg.jpg);
+  display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
 
 }
 
 .card {
-  padding: 10px;
+  width: fit-content;
+
 }
 
 .card-header {
@@ -31,13 +35,13 @@
   flex-direction: column;
   justify-self: center;
   align-self: center;
-  margin-left: 30px;
+
 }
 
 .card-block {
     background-color: whitesmoke;
-    padding: 10px;
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
