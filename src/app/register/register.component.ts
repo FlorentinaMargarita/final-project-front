@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
       sessionStorage.setItem('secondName', res.secondName);
       this._userService.loggedIn = true;
       this._userService.loggedIn = true;
-      this.router.navigate(['reso'])
+      this.router.navigate(['result'])
     })
   }
 

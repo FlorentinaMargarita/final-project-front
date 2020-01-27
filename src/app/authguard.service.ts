@@ -14,7 +14,7 @@ export class AuthguardService implements CanActivate {
 canActivate(): boolean {
   if (!this._userService.loggedIn) {
     this.router.navigate(['login']);
-    prompt("Please login or register")
+    alert("Please login or register to access your Favourite movies and search movie titles.")
     return false;
   }
   return true;

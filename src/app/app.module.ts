@@ -8,12 +8,13 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { ResoComponent } from './reso/reso.component'
+import { ResultComponent } from './result/result.component';
 import { ApiService } from './api.service';
 import { FacvouriteComponent } from './facvourite/facvourite.component';
 import { UserService } from './user.service';
 import { RegisterComponent } from './register/register.component';
 import { MovieService } from './movie.service';
+import {AuthguardService } from './authguard.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { MovieService } from './movie.service';
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    ResoComponent,
+    ResultComponent,
     FacvouriteComponent,
     RegisterComponent
   ],
@@ -32,9 +33,9 @@ import { MovieService } from './movie.service';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule
-    
+
   ],
-  providers: [ApiService, UserService, MovieService],
+  providers: [ApiService, UserService, AuthguardService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

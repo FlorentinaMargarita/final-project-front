@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { Session } from 'protractor';
+
 
 @Injectable({
   providedIn: "root"
@@ -45,14 +47,20 @@ export class UserService {
     return new HttpHeaders().set('Authorization', sessionStorage.getItem('token'))
   }
 
-  logOut(){
-
+  logOut(): void{
 
     localStorage.removeItem("token");
     window.localStorage.clear();
     this.loggedIn = false;
     this.router.navigate(['/logIn']);
+    // const  logoutUrl = "http://localhost:3000/api/appUsers/logout?access_token=";
+    // console.log("logout", this.token)
+    // console.log(logoutUrl + this.token, user)
+    // return this._http.post(logoutUrl + this.token, user).subscribe(data => {})
 }
+
+
+
 
 // currentUserInfo = "";
 

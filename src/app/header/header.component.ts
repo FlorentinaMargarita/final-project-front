@@ -33,7 +33,7 @@ export class HeaderComponent  {
       this._movieService.movies  = res.results;
       // this._userService.getUserCred(this.user)
       //console.log("res:", res)
-      this.router.navigate(['/reso']);
+      this.router.navigate(['/result']);
       })
   }
 
@@ -60,7 +60,7 @@ export class HeaderComponent  {
   // });
   // sessionStorage.setItem('userId', res.userId);
   // this._userService.loggedIn = true;
-  // this.router.navigate(['reso'])
+  // this.router.navigate(['result'])
 
   best() {
   this.router.navigate(['/logIn']);
