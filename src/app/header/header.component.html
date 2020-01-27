@@ -15,7 +15,7 @@
 
 
 
-<div class="gurke" *ngIf="_userService.userInfo">{{_userService.userInfo.firstName}}</div>
+<div class="gurke" *ngIf="_userService.loggedIn">{{_userService.userInfo.firstName}}</div>
 
   <clr-dropdown class="btn btn-link">
     <button clrDropdownTrigger class="btn btn-outline">
