@@ -14,6 +14,7 @@ import { FacvouriteComponent } from './facvourite/facvourite.component';
 import { UserService } from './user.service';
 import { RegisterComponent } from './register/register.component';
 import { MovieService } from './movie.service';
+import {AuthguardService } from './authguard.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { MovieService } from './movie.service';
     HttpClientModule
 
   ],
-  providers: [ApiService, UserService, MovieService],
+  providers: [ApiService, UserService, AuthguardService, MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
