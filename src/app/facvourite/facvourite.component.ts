@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { MovieService } from '../movie.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-facvourite',
@@ -15,6 +16,7 @@ export class FacvouriteComponent implements OnInit {
 
   constructor(
     public _movieService: MovieService,
+    public _userService: UserService,
     public _apiService: ApiService) {
 
     }
