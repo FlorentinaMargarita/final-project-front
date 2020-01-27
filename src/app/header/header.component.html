@@ -2,9 +2,11 @@
      <button (click)="best()" class="btn btn-outline" style="color: #0077b8"> Movie Admirers </button>
 
 
-    <input type="text"  style= "color:#5659b8" class="btn btn-outline" [(ngModel)]="movieTitle" name="first" placeholder="Find movies...">
+    <input type="text"   style= "color:#5659b8" class="btn btn-outline" [(ngModel)]="movieTitle" name="first" placeholder="Find movies...">
 
-  <button class="btn btn-outline"  [(ngModel)]="movieTitle" (click)="fetch1()">Search</button>
+  <button  class="btn btn-icon"   [(ngModel)]="movieTitle" (click)="fetch1()"> <clr-icon shape="search"></clr-icon></button>
+
+
 
 <!--
       <div class="branding">
@@ -15,7 +17,7 @@
 
 
 
-<div class="gurke" *ngIf="this._userService.loggedIn">{{_userService.userInfo.firstName}}</div>
+<div class="gurke" *ngIf="this._userService.loggedIn">Hi {{_userService.userInfo.firstName}}</div>
 
   <clr-dropdown class="btn btn-link">
     <button clrDropdownTrigger class="btn btn-outline">

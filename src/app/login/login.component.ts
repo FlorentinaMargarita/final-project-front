@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     password: "",
     email: ""
   };
-
+  error = {message: ''};
   constructor(private router: Router, private _userService: UserService) {}
 
   user: any = {};
@@ -37,8 +37,13 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('userId', res.userId);
       this._userService.loggedIn = true;
       this.router.navigate(['result']);
-    })
-
-
-  }
-}
+      this.error.message = "";
+    }, err => {
+        console.log("err:", err);
+        if (err.error.error.statusCode === 422 || 401) {
+            this.error.message = 'User input is not valid'
+            console.log('Error Message:', this.error.message)
+        }
+      })
+ }
+    }

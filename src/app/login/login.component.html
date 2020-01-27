@@ -5,7 +5,18 @@
             Movie Admirers!
             <h5 class="hint"><i>The movie data base for everyone who didn't receive an Academy Award and still loves movies... </i></h5>
         </section>
-
+        <div class="error" *ngIf="error.message">
+          <div class="alert alert-warning">
+              <div class="alert-items">
+                  <div class="alert-item static">
+                      <div class="alert-icon-wrapper">
+                              <clr-icon class="alert-icon" shape="exclamation-triangle"></clr-icon>
+                      </div>
+                      <span class="alert-text">{{error.message}}</span>
+                  </div>
+              </div>
+          </div>
+      </div>
         <div class="login-group">
 
             <clr-input-container>

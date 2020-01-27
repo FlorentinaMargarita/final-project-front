@@ -22,7 +22,11 @@ justify-content: space-around;
 .card{
  background-color: #0077b8;
  padding: 5px;
- width: auto;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+ width: fit-content;
+ height: fit-content;
  box-shadow: cadetblue;
  font-style: 400 13.3333px Arial;
 }
@@ -31,13 +35,29 @@ justify-content: space-around;
   color: white;
   background-color: rgb(60, 60, 124);
   padding: 5px;
+  display: flex;
+ flex-wrap: wrap;
   font-style: 400 13.3333px Arial;
+
+
+}
+
+.date {
+  padding: 10px;
+}
+
+.img{
+
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
 .span {
-  justify-content: space-between;
+  justify-content: start;
   flex-direction: row;
+  width: 30%;
 }
 
 .button {
