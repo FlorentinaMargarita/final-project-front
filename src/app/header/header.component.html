@@ -1,12 +1,12 @@
 <header class="header-6">
      <button (click)="best()" class="btn btn-outline" style="color: #0077b8"> Movie Admirers </button>
 
-
+<div class="container">
     <input type="text"   style= "color:#5659b8" class="btn btn-outline" [(ngModel)]="movieTitle" name="first" placeholder="Find movies...">
 
   <button  class="btn btn-icon"   [(ngModel)]="movieTitle" (click)="fetch1()"> <clr-icon shape="search"></clr-icon></button>
 
-
+</div>
 
 <!--
       <div class="branding">
@@ -27,7 +27,7 @@
       <div class="dropdown-item" (click)="best()">Login</div>
       <div class="dropdown-item" (click)="best1()">Register</div>
       <div class="dropdown-item" (click)="_userService.logOut()">Logout</div>
-      <div class="dropdown-item" (click)="_movieService.getFavorites()">Favourites</div>
+      <div class="dropdown-item" (click)="_movieService.getFavorites()">Favorites</div>
     </clr-dropdown-menu>
   </clr-dropdown>
   <!--
