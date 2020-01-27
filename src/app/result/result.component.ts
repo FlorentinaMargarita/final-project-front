@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-reso',
-  templateUrl: './reso.component.html',
-  styleUrls: ['./reso.component.scss'],
+  selector: 'app-result',
+  templateUrl: './result.component.html',
+  styleUrls: ['./result.component.scss'],
 })
-export class ResoComponent  {
+export class ResultComponent  {
 
   movies: any;
   // movie: any;

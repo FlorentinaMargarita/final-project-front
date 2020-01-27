@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, Router } from '@angular/router';
-import { ResoComponent } from './reso/reso.component';
+import { Routes, RouterModule, Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { ResultComponent } from './result/result.component';
 import { LoginComponent } from './login/login.component';
 import { FacvouriteComponent } from './facvourite/facvourite.component';
 import { RegisterComponent } from './register/register.component';
 
  const routes: Routes = [
-  { path: 'reso', component: ResoComponent},
+  { path: 'result', component: ResultComponent},
   { path: '', redirectTo: 'register', pathMatch: 'full'},
   { path: 'register', component: RegisterComponent},
   { path: 'logIn', component: LoginComponent},
