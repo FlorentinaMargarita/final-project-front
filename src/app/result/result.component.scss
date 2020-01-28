@@ -34,24 +34,13 @@ justify-content: space-around;
 .card-block{
   color: white;
   background-color: rgb(60, 60, 124);
-//   padding: 5px;
-//   display: flex;
-//  flex-wrap: wrap;
-//   font-style: 400 13.3333px Arial;
+  padding: 5px;
+  display: flex;
+ flex-wrap: wrap;
+  font-style: 400 13.3333px Arial;
 
-    width: 200px;
 
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    background: white;
-    white-space: nowrap;
-
-  overflow: hidden;
-  text-overflow: clip;
-  border: 1px solid #000000;
-  }
-
+}
 
 .date {
   padding: 10px;
