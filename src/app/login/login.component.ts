@@ -21,17 +21,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   dologIn() {
-    console.log("login",this.form);
 
     this._userService.login(this.form).subscribe( (res: any)=> {
-      console.log(res);
 
       sessionStorage.setItem('token', res.token);
       this._userService.userInfo = res;
-
       this._userService.getUserInfo(res).subscribe((mario: any)=> {
       this._userService.userInfo = mario;
-      console.log ("getUserInfo", mario)
       });
 
       sessionStorage.setItem('userId', res.userId);
@@ -39,10 +35,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['result']);
       this.error.message = "";
     }, err => {
-        console.log("err:", err);
         if (err.error.error.statusCode === 422 || 401) {
             this.error.message = 'User input is not valid'
-            console.log('Error Message:', this.error.message)
         }
       })
  }

@@ -26,7 +26,7 @@ export class ResultComponent  {
 
   addToFavorites(movie){
     this._movieService.addToFavorites(movie).subscribe( (res: any) => {
-      console.log(res)
+
       this.goTofavs();
     })
   }

@@ -25,11 +25,8 @@ export class RegisterComponent implements OnInit {
      ngOnInit() {}
 
   register(){
-    console.log ("register", this.form)
     this._userService.registerUser(this.form).subscribe( (res: any)=> {
-      console.log(res)
-      this._userService.userInfo = res; //neu
-      console.log(this._userService.userInfo)
+      this._userService.userInfo = res;
       sessionStorage.setItem('token', res.token); //token is stored in sessionStorage
       sessionStorage.setItem('userId', res.userId);
       sessionStorage.setItem('firstName', res.firstName);
