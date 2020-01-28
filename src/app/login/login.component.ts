@@ -46,4 +46,8 @@ export class LoginComponent implements OnInit {
         }
       })
  }
+
+ best1() {
+  this.router.navigate(['/register']);
+}
     }

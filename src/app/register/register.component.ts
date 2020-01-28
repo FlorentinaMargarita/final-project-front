@@ -40,6 +40,9 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  best() {
+    this.router.navigate(['/logIn']);
+  }
 
 
 

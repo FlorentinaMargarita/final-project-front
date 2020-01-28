@@ -1,0 +1,211 @@
+diff --git a/src/app/facvourite/facvourite.component.html b/src/app/facvourite/facvourite.component.html
+index d43f8e7..32f03d4 100644
+--- a/src/app/facvourite/facvourite.component.html
++++ b/src/app/facvourite/facvourite.component.html
+@@ -1,6 +1,6 @@
+ <div class="leftSide">
+   <div class="title">
+-    <h2 class="title"> Your favorite movies...</h2>
++    <h2 class="title"> Your favourite movies...</h2>
+   </div>
+   <!-- <div class="clr-row">
+     <div class="clr-col-lg-4 clr-col-md-5 clr-col-12"> -->
+diff --git a/src/app/header/header.component.html b/src/app/header/header.component.html
+index 2e774e9..9784343 100644
+--- a/src/app/header/header.component.html
++++ b/src/app/header/header.component.html
+@@ -1,12 +1,10 @@
+ <header class="header-6">
+      <button (click)="best()" class="btn btn-outline" style="color: #0077b8"> Movie Admirers </button>
+ 
+-<div class="container">
+-    <input type="text"   style= "color:#5659b8" class="btn btn-outline" [(ngModel)]="movieTitle" name="first" placeholder="Find movies...">
+ 
+-  <button  class="btn btn-icon"   [(ngModel)]="movieTitle" (click)="fetch1()"> <clr-icon shape="search"></clr-icon></button>
++    <input type="text"  style= "color:#5659b8" class="btn btn-outline" [(ngModel)]="movieTitle" name="first" placeholder="Find movies...">
+ 
+-</div>
++  <button class="btn btn-outline"  [(ngModel)]="movieTitle" (click)="fetch1()">Search</button>
+ 
+ <!--
+       <div class="branding">
+@@ -17,7 +15,7 @@
+ 
+ 
+ 
+-<div class="gurke" *ngIf="this._userService.loggedIn">Hi {{_userService.userInfo.firstName}}</div>
++<div class="gurke" *ngIf="this._userService.loggedIn">{{_userService.userInfo.firstName}}</div>
+ 
+   <clr-dropdown class="btn btn-link">
+     <button clrDropdownTrigger class="btn btn-outline">
+@@ -27,7 +25,7 @@
+       <div class="dropdown-item" (click)="best()">Login</div>
+       <div class="dropdown-item" (click)="best1()">Register</div>
+       <div class="dropdown-item" (click)="_userService.logOut()">Logout</div>
+-      <div class="dropdown-item" (click)="_movieService.getFavorites()">Favorites</div>
++      <div class="dropdown-item" (click)="_movieService.getFavorites()">Favourites</div>
+     </clr-dropdown-menu>
+   </clr-dropdown>
+   <!--
+diff --git a/src/app/header/header.component.scss b/src/app/header/header.component.scss
+index a7fa978..d1304ca 100644
+--- a/src/app/header/header.component.scss
++++ b/src/app/header/header.component.scss
+@@ -7,10 +7,6 @@ flex-wrap: wrap;
+     color: white;
+ }
+ 
+-container {
+-
+-width: fit-content;
+-}
+ .gurke {
+   color: white;
+ 
+diff --git a/src/app/login/login.component.html b/src/app/login/login.component.html
+index bdb2010..b52c933 100644
+--- a/src/app/login/login.component.html
++++ b/src/app/login/login.component.html
+@@ -5,18 +5,7 @@
+             Movie Admirers!
+             <h5 class="hint"><i>The movie data base for everyone who didn't receive an Academy Award and still loves movies... </i></h5>
+         </section>
+-        <div class="error" *ngIf="error.message">
+-          <div class="alert alert-warning">
+-              <div class="alert-items">
+-                  <div class="alert-item static">
+-                      <div class="alert-icon-wrapper">
+-                              <clr-icon class="alert-icon" shape="exclamation-triangle"></clr-icon>
+-                      </div>
+-                      <span class="alert-text">{{error.message}}</span>
+-                  </div>
+-              </div>
+-          </div>
+-      </div>
++
+         <div class="login-group">
+ 
+             <clr-input-container>
+diff --git a/src/app/login/login.component.ts b/src/app/login/login.component.ts
+index 185099a..d8cfdf7 100644
+--- a/src/app/login/login.component.ts
++++ b/src/app/login/login.component.ts
+@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
+     password: "",
+     email: ""
+   };
+-  error = {message: ''};
++
+   constructor(private router: Router, private _userService: UserService) {}
+ 
+   user: any = {};
+@@ -37,13 +37,8 @@ export class LoginComponent implements OnInit {
+       sessionStorage.setItem('userId', res.userId);
+       this._userService.loggedIn = true;
+       this.router.navigate(['result']);
+-      this.error.message = "";
+-    }, err => {
+-        console.log("err:", err);
+-        if (err.error.error.statusCode === 422 || 401) {
+-            this.error.message = 'User input is not valid'
+-            console.log('Error Message:', this.error.message)
+-        }
+-      })
+- }
+-    }
++    })
++
++
++  }
++}
+diff --git a/src/app/register/register.component.html b/src/app/register/register.component.html
+index 348975b..7d452e8 100644
+--- a/src/app/register/register.component.html
++++ b/src/app/register/register.component.html
+@@ -20,8 +20,8 @@
+             </clr-input-container>
+ 
+             <clr-input-container>
+-                <label class="clr-sr-only">Last Name</label>
+-                <input type="text" name="secondName" [(ngModel)]="form.secondName" clrInput placeholder="Last Name"/>
++                <label class="clr-sr-only">Second Name</label>
++                <input type="text" name="secondName" [(ngModel)]="form.secondName" clrInput placeholder="Second Name"/>
+         </clr-input-container>
+ 
+             <clr-input-container>
+diff --git a/src/app/result/result.component.html b/src/app/result/result.component.html
+index 110e457..f9512c3 100644
+--- a/src/app/result/result.component.html
++++ b/src/app/result/result.component.html
+@@ -6,19 +6,12 @@
+   <!-- <div class="clr-row">
+     <div class="clr-col-lg-4 clr-col-md-5 clr-col-12"> -->
+ 
+-      <div class="clr-row">
+-    <div  *ngFor="let movie of _movieService?.movies" class="clr-col-lg-3 clr-col-12">
+-    <div class="card clickable" color="white">
+-      <div class="card-img">
+-        <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
++  <div *ngFor="let movie of _movieService?.movies">
++    <div class="card" color="white">
+       <div class="card-block">
+         <h3  class="span" style="color: white;">{{movie.title}} <button class="btn btn-outline"(click) = "addToFavorites(movie)"> ❤️</button></h3>
+-<br>
+-<p class="date" style="color: white;"> Summary: <br> {{movie.overview}}</p> <br><br>
+-<p  class="date" style="color: white;"> Vote-Average: {{movie.vote_average}}</p> <br> <br>
+-<p  class="date" style="color: white;"> Release-Date: {{movie.release_date}}</p> <br><br>
+-
+-    <!-- <img class="img" src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}"> -->
++<br> <br>
++    <img src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}">
+ 
+ 
+       <!-- </div>
+diff --git a/src/app/result/result.component.scss b/src/app/result/result.component.scss
+index 1fa5331..c74a1cb 100644
+--- a/src/app/result/result.component.scss
++++ b/src/app/result/result.component.scss
+@@ -22,11 +22,7 @@ justify-content: space-around;
+ .card{
+  background-color: #0077b8;
+  padding: 5px;
+- display: flex;
+- flex-wrap: wrap;
+- flex-direction: column;
+- width: fit-content;
+- height: fit-content;
++ width: auto;
+  box-shadow: cadetblue;
+  font-style: 400 13.3333px Arial;
+ }
+@@ -35,29 +31,13 @@ justify-content: space-around;
+   color: white;
+   background-color: rgb(60, 60, 124);
+   padding: 5px;
+-  display: flex;
+- flex-wrap: wrap;
+   font-style: 400 13.3333px Arial;
+ 
+-
+-}
+-
+-.date {
+-  padding: 10px;
+-}
+-
+-.img{
+-
+-  padding: 10px;
+-  margin-left: auto;
+-  margin-right: auto;
+-
+ }
+ 
+ .span {
+-  justify-content: start;
++  justify-content: space-between;
+   flex-direction: row;
+-  width: 30%;
+ }
+ 
+ .button {

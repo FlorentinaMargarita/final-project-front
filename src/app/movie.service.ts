@@ -43,14 +43,14 @@ export class MovieService {
 
 
   deleteFavorites(movie: any){
-    console.log(movie.movie.id);
+    console.log(movie);
     const userId = sessionStorage.getItem('userId');
     const token = sessionStorage.getItem('token')
     const deleteURL = `${this.favoriteUrl}/${userId}/favourites/${movie.id}?access_token=${token}`;
-    return this._http.delete(deleteURL).subscribe( data => {})
+    return this._http.delete(deleteURL).subscribe( data => {this.getFavorites()})
   }
 
-//http://localhost:3000/api/appUsers/ID VOM APP USER/favourites/MOVIEID?access_token=TOKEN
+//http://localhost:3000/api/appUsers/ID OF APP USER/favourites/MOVIEID?access_token=TOKEN
 
 
   createHeader(){
