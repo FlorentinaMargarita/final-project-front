@@ -12,7 +12,7 @@ export class UserService {
 
   password: "";
   email: "";
-  baseUrl: string = "http://localhost:3000/";
+  baseUrl: string = "https://movie-demo-florentina-be.herokuapp.com/";
   appUserUrl: string = "api/appUsers/";
   // loginUrl: string = `api/appUsers/login?access_token=`;
   loginUrl: string = `api/appUsers/login`;
